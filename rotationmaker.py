@@ -51,6 +51,18 @@ def dayOfWeek(integerWeekday):
 			return "Sunday"
 	else:
 		return "ERROR"			
+
+def meetingDay(meetingDayNumber):
+	if meetingDayNumber == 1:
+		return "A"
+	elif meetingDayNumber == 2:
+		return "B"
+	elif meetingDayNumber == 3:
+		return "C"
+	elif meetingDayNumber == 4:
+		return "D"
+	else:
+		return "ERROR"
 #
 # the function below was used from stackoverflow because I wasn't thinking of the date utilities in python.
 # https://stackoverflow.com/questions/1060279/iterating-through-a-range-of-dates-in-python
@@ -60,20 +72,24 @@ def dayOfWeek(integerWeekday):
 #
 totalDays = 0
 totalDaysNoWeekends = 0 
-
+meetingDayNumber = 1
 
 for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 		# the condition skips weekends.
 		if dt.weekday() < 5:
-			print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()))
+			if meetingDayNumber > 4:
+				meetingDayNumber = 1
+			print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber))
+			meetingDayNumber += 1
 			totalDaysNoWeekends +=1
 		totalDays += 1
+
+
+
+
+
+
 print("I've processed a total of ", totalDays, " days")
 print("I've processed a total of ", totalDaysNoWeekends, " days with no weekends")
-
-
-
-
-
 
 
