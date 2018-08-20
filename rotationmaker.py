@@ -4,13 +4,6 @@
 import datetime
 from dateutil.rrule import rrule, DAILY
 
-# initialization of rotating days
-
-grade11and12DayA = [1,2,3,4]
-grade11and12DayB = [5,6,7,8]
-grade11and12DayC = [4,2,3,1]
-grade11and12DayD = [8,6,7,5]
-
 # initialization stuff for 9th and 10th grade! 
 
 grade9and10normalPeriod1Start = datetime.time(8,30)
@@ -25,12 +18,58 @@ grade9and10normalPeriod3End = datetime.time(12,30)
 grade9and10normalPeriod4Start = datetime.time(14,20)
 grade9and10normalPeriod4End = datetime.time(15,30)
 
+# the configuration below is for Wednesdays
+
+grade9and10WednesdayPeriod1Start = datetime.time(9,30)
+grade9and10WednesdayPeriod1End = datetime.time(10,45)
+
+grade9and10WednesdayPeriod2Start = datetime.time(11,00)
+grade9and10WednesdayPeriod2End = datetime.time(12,15)
+
+grade9and10WednesdayPeriod3Start = datetime.time(12,55)
+grade9and10WednesdayPeriod3End = datetime.time(14,10)
+
+grade9and10WednesdayPeriod4Start = datetime.time(14,15)
+grade9and10WednesdayPeriod4End = datetime.time(15,30)
+
+
+
+# initialize the grade 11 and 12 
+
+
+grade11and12normalPeriod1Start = datetime.time(8,20)
+grade11and12normalPeriod1End = datetime.time(9,45)
+
+grade11and12normalPeriod2Start = datetime.time(9,50)
+grade11and12normalPeriod2End = datetime.time(11,15)
+
+grade11and12normalPeriod3Start = datetime.time(11,30)
+grade11and12normalPeriod3End = datetime.time(12,55)
+
+grade11and12normalPeriod4Start = datetime.time(13,55)
+grade11and12normalPeriod4End = datetime.time(15,20)
+
+# the configuration below is for Wednesdays
+
+grade11and12WednesdayPeriod1Start = datetime.time(9,30)
+grade11and12WednesdayPeriod1End = datetime.time(10,50)
+
+grade11and12WednesdayPeriod2Start = datetime.time(11,00)
+grade11and12WednesdayPeriod2End = datetime.time(12,20)
+
+grade11and12WednesdayPeriod3Start = datetime.time(12,50)
+grade11and12WednesdayPeriod3End = datetime.time(14,10)
+
+grade11and12WednesdayPeriod4Start = datetime.time(14,15)
+grade11and12WednesdayPeriod4End = datetime.time(15,30)
+
+
+
 # initialization for start of year
 
 startOfAcademicYear = datetime.date(2018,8,24) # Friday
 endOfAcademicYear = datetime.date(2019,6,18) # Wednesday
 academicYearMeetingDays = endOfAcademicYear - startOfAcademicYear
-firstDay = "A"
 
 # functions to do stuff
 
@@ -70,16 +109,107 @@ def meetingDay(meetingDayNumber):
 
 # I'm keeping track of some processing data here for sanity 
 #
+
 totalDays = 0
 totalDaysNoWeekends = 0 
+
+# this is where we start the year, on a day 1 or A. 
+
 meetingDayNumber = 1
 
 for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
-		# the condition skips weekends.
+		# the condition below skips weekends
+		# TODO ADD WEDNESDAY
+		# TODO add 9/10/11/12 split 
 		if dt.weekday() < 5:
+			# the condition below limits us to 4 rotating days
 			if meetingDayNumber > 4:
 				meetingDayNumber = 1
-			print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber))
+			if meetingDayNumber == 1:
+				if dt.weekday() == 2:
+					print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 1,2,3,4")
+					print("   Period 1 starts at ",grade11and12WednesdayPeriod1Start)
+					print("   Period 1 ends at ",grade11and12WednesdayPeriod1End)
+					print("   Period 2 starts at ",grade11and12WednesdayPeriod2Start)
+					print("   Period 2 ends at ",grade11and12WednesdayPeriod2End)
+					print("   Period 3 starts at ",grade11and12WednesdayPeriod3Start)
+					print("   Period 2 ends at ",grade11and12WednesdayPeriod3End)
+					print("   Period 4 starts at ",grade11and12WednesdayPeriod4Start)
+					print("   Period 4 ends at ",grade11and12WednesdayPeriod4End)
+				else:
+					print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 1,2,3,4")
+					print("   Period 1 starts at ",grade11and12normalPeriod1Start)
+					print("   Period 2 ends at ",grade11and12normalPeriod1End)
+					print("   Period 2 starts at ",grade11and12normalPeriod2Start)
+					print("   Period 2 ends at ",grade11and12normalPeriod2End)
+					print("   Period 3 starts at ",grade11and12normalPeriod3Start)
+					print("   Period 2 ends at ",grade11and12normalPeriod3End)
+					print("   Period 4 starts at ",grade11and12normalPeriod4Start)
+					print("   Period 4 ends at ",grade11and12normalPeriod4End)
+			elif meetingDayNumber == 2:
+				if dt.weekday() == 2:
+					print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 5,6,7,8")
+					print("   Period 5 starts at ",grade11and12WednesdayPeriod1Start)
+					print("   Period 5 ends at ",grade11and12WednesdayPeriod1End)
+					print("   Period 6 starts at ",grade11and12WednesdayPeriod2Start)
+					print("   Period 6 ends at ",grade11and12WednesdayPeriod2End)
+					print("   Period 7 starts at ",grade11and12WednesdayPeriod3Start)
+					print("   Period 7 ends at ",grade11and12WednesdayPeriod3End)
+					print("   Period 8 starts at ",grade11and12WednesdayPeriod4Start)
+					print("   Period 8 ends at ",grade11and12WednesdayPeriod4End)
+				else:	
+					print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 5,6,7,8")
+					print("   Period 5 starts at ",grade11and12normalPeriod1Start)
+					print("   Period 5 ends at ",grade11and12normalPeriod1End)
+					print("   Period 6 starts at ",grade11and12normalPeriod2Start)
+					print("   Period 6 ends at ",grade11and12normalPeriod2End)
+					print("   Period 7 starts at ",grade11and12normalPeriod3Start)
+					print("   Period 7 ends at ",grade11and12normalPeriod3End)
+					print("   Period 8 starts at ",grade11and12normalPeriod4Start)
+					print("   Period 8 ends at ",grade11and12normalPeriod4End)
+			elif meetingDayNumber == 3:
+				if dt.weekday() == 2:	
+					print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 4,2,3,1")
+					print("   Period 4 starts at ",grade11and12WednesdayPeriod1Start)
+					print("   Period 4 ends at ",grade11and12WednesdayPeriod1End)
+					print("   Period 3 starts at ",grade11and12WednesdayPeriod2Start)
+					print("   Period 3 ends at ",grade11and12WednesdayPeriod2End)
+					print("   Period 2 starts at ",grade11and12WednesdayPeriod3Start)
+					print("   Period 2 ends at ",grade11and12WednesdayPeriod3End)
+					print("   Period 1 starts at ",grade11and12WednesdayPeriod4Start)
+					print("   Period 1 ends at ",grade11and12WednesdayPeriod4End)
+				else:
+					print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 4,2,3,1")
+					print("   Period 4 starts at ",grade11and12normalPeriod1Start)
+					print("   Period 4 ends at ",grade11and12normalPeriod1End)
+					print("   Period 3 starts at ",grade11and12normalPeriod2Start)
+					print("   Period 3 ends at ",grade11and12normalPeriod2End)
+					print("   Period 2 starts at ",grade11and12normalPeriod3Start)
+					print("   Period 2 ends at ",grade11and12normalPeriod3End)
+					print("   Period 1 starts at ",grade11and12normalPeriod4Start)
+					print("   Period 1 ends at ",grade11and12normalPeriod4End)	
+			elif meetingDayNumber == 4:
+				if dt.weekday() == 2:
+					print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 8,6,7,5")
+					print("   Period 8 starts at ",grade11and12WednesdayPeriod1Start)
+					print("   Period 8 ends at ",grade11and12WednesdayPeriod1End)
+					print("   Period 6 starts at ",grade11and12WednesdayPeriod2Start)
+					print("   Period 6 ends at ",grade11and12WednesdayPeriod2End)
+					print("   Period 7 starts at ",grade11and12WednesdayPeriod3Start)
+					print("   Period 7 ends at ",grade11and12WednesdayPeriod3End)
+					print("   Period 5 starts at ",grade11and12WednesdayPeriod4Start)
+					print("   Period 5 ends at ",grade11and12WednesdayPeriod4End)
+				else:
+					print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 8,6,7,5")
+					print("   Period 8 starts at ",grade11and12normalPeriod1Start)
+					print("   Period 8 ends at ",grade11and12normalPeriod1End)
+					print("   Period 6 starts at ",grade11and12normalPeriod2Start)
+					print("   Period 6 ends at ",grade11and12normalPeriod2End)
+					print("   Period 7 starts at ",grade11and12normalPeriod3Start)
+					print("   Period 7 ends at ",grade11and12normalPeriod3End)
+					print("   Period 5 starts at ",grade11and12normalPeriod4Start)
+					print("   Period 5 ends at ",grade11and12normalPeriod4End)
+
 			meetingDayNumber += 1
 			totalDaysNoWeekends +=1
 		totalDays += 1
@@ -91,5 +221,3 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 
 print("I've processed a total of ", totalDays, " days")
 print("I've processed a total of ", totalDaysNoWeekends, " days with no weekends")
-
-
