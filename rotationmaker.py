@@ -4,6 +4,13 @@
 import datetime
 from dateutil.rrule import rrule, DAILY
 
+# initialization of rotating days
+
+grade11and12DayA = [1,2,3,4]
+grade11and12DayB = [5,6,7,8]
+grade11and12DayC = [4,2,3,1]
+grade11and12DayD = [8,6,7,5]
+
 # initialization stuff for 9th and 10th grade! 
 
 grade9and10normalPeriod1Start = datetime.time(8,30)
@@ -23,7 +30,7 @@ grade9and10normalPeriod4End = datetime.time(15,30)
 startOfAcademicYear = datetime.date(2018,8,24) # Friday
 endOfAcademicYear = datetime.date(2019,6,18) # Wednesday
 academicYearMeetingDays = endOfAcademicYear - startOfAcademicYear
-
+firstDay = "A"
 
 # functions to do stuff
 
@@ -49,9 +56,20 @@ def dayOfWeek(integerWeekday):
 # https://stackoverflow.com/questions/1060279/iterating-through-a-range-of-dates-in-python
 #
 
+# I'm keeping track of some processing data here for sanity 
+#
+totalDays = 0
+totalDaysNoWeekends = 0 
+
 
 for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
-    print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()))
+		# the condition skips weekends.
+		if dt.weekday() < 5:
+			print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()))
+			totalDaysNoWeekends +=1
+		totalDays += 1
+print("I've processed a total of ", totalDays, " days")
+print("I've processed a total of ", totalDaysNoWeekends, " days with no weekends")
 
 
 
