@@ -1,2 +1,2 @@
 # rotationMaker.py
-makes a rotating ics calendar
+makes a rotating calendar for a school. 
