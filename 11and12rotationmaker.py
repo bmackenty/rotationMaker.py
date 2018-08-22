@@ -66,7 +66,7 @@ grade11and12WednesdayPeriod4End = datetime.time(15,30)
 
 # Initialize vacations 
 
-vacations = ["2018-10-05","2018-10-29","2018-10-30","2018-10-31","2018-11-01","2018-11-02",
+vacations = ["2018-09-05","2018-09-06","2018-10-05","2018-10-17","2018-10-29","2018-10-30","2018-10-31","2018-11-01","2018-11-02",
 "2018-11-22","2018-11-23",
 "2018-12-17","2018-12-18","2018-12-19","2018-12-20","2018-12-21","2018-12-24","2018-12-25","2018-12-26","2018-12-27","2018-12-28","2018-12-31","2019-01-01","2019-01-02","2019-01-03","2019-01-04",
 "2019-02-18","2019-02-19","2019-02-20","2019-02-21","2019-02-22",
@@ -165,14 +165,14 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 					if dt.weekday() == 2:	
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 4,2,3,1")
 						print("Period 4," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1End)
-						print("Period 3," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2End)
-						print("Period 2," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3End)
+						print("Period 2," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2End)
+						print("Period 3," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3End)
 						print("Period 1," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4End)
 					else:
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 4,2,3,1")
 						print("Period 4," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1End)
-						print("Period 3," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
-						print("Period 2," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
+						print("Period 2," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
+						print("Period 3," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
 						print("Period 1," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
 				elif meetingDayNumber == 4:
 					if dt.weekday() == 2:
