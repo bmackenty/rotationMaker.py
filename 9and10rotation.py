@@ -18,6 +18,9 @@ grade9and10normalPeriod3End = datetime.time(12,30)
 grade9and10normalPeriod4Start = datetime.time(14,20)
 grade9and10normalPeriod4End = datetime.time(15,30)
 
+grade9and10normalPeriodADVStart = datetime.time(13)
+grade9and10normalPeriodADVEnd = datetime.time(13,20)
+
 grade9and10normalPeriod9Start = datetime.time(13,5)
 grade9and10normalPeriod9End = datetime.time(14,15)
 
@@ -122,9 +125,13 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 						print("Period 2," ,dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod2End)
 						print("Period 3," ,dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod3End)
 						print("Period 4," ,dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod4End)
+
 						if block9onWednesday:
 							print("Period 9," ,dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod9Start,",",dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod9End)
 							block9onWednesday = False
+						else:
+							print("Adv/Comm," ,dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriodADVStart,",",dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriodADVEnd)
+	
 				elif meetingDayNumber == 2:
 					if dt.weekday() == 2:
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 5,6,7,8")
@@ -140,6 +147,7 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 						print("Period 7," ,dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod3End)
 						print("Period 8," ,dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod4End)
 						print("Period 9," ,dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod9Start,",",dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod9End)
+
 				elif meetingDayNumber == 3:
 					if dt.weekday() == 2:	
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 4,2,3,1")
@@ -156,6 +164,9 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 						if block9onWednesday:
 							print("Period 9," ,dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod9Start,",",dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriod9End)
 							block9onWednesday = False
+						else:
+							print("Adv/Comm," ,dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriodADVStart,",",dt.strftime("%m-%d-%Y"),",",grade9and10normalPeriodADVEnd)
+	
 				elif meetingDayNumber == 4:
 					if dt.weekday() == 2:
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 8,6,7,5")
