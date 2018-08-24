@@ -151,6 +151,8 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 						print("Period 2," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
 						print("Period 3," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
 						print("Period 4," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
+						print("Adv/Comm," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVStart,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVEnd)
+
 				elif meetingDayNumber == 2:
 					if dt.weekday() == 2:
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 5,6,7,8")
@@ -164,6 +166,8 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 						print("Period 6," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
 						print("Period 7," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
 						print("Period 8," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
+						print("Adv/Comm," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVStart,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVEnd)
+
 				elif meetingDayNumber == 3:
 					if dt.weekday() == 2:	
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 4,2,3,1")
@@ -177,6 +181,8 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 						print("Period 2," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
 						print("Period 3," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
 						print("Period 1," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
+						print("Adv/Comm," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVStart,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVEnd)
+
 				elif meetingDayNumber == 4:
 					if dt.weekday() == 2:
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 8,6,7,5")
@@ -190,14 +196,7 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 						print("Period 6," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
 						print("Period 7," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
 						print("Period 5," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
+						print("Adv/Comm," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVStart,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVEnd)
 				meetingDayNumber += 1
 				totalDaysNoWeekends +=1
 			totalDays += 1
-
-
-
-
-
-
-print("I've processed a total of ", totalDays, " days")
-print("I've processed a total of ", totalDaysNoWeekends, " days with no weekends")
