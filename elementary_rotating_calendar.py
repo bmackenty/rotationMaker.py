@@ -109,11 +109,15 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
     if dt.weekday() < 5:
         # the condition below skips any days defined in no contact days: 
         if dt.strftime('%Y-%m-%d') not in noStudentContactDays:
+            # count total contact days: 
+            totalDays += 1
             # the condition below skips Wednesdays:
             if dt.weekday() != 2:
                 # now we reset the rotation if it is higher than 6:
                 if meetingDay == 6:
                     meetingDay = 0
                 meetingDay += 1
-                print(dt.strftime("%m-%d-%Y"), " - day of week is : ", dayOfWeek(dt.weekday()), ". Rotating day: ", meetingDay)
+                print(dayOfWeek(dt.weekday()), ",", dt.strftime("%m-%d-%Y") , "Rotating day: ", meetingDay)
 
+
+print("Total student contact days (counting Wednesdays): ", totalDays)
