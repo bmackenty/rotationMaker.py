@@ -1,13 +1,8 @@
 #
 # This program is designed to make a 6 day rotating calendar for the American School of Warsaw. 
-# The program accounts for vacations, weekends, and wacky wednesdays, which do not count in the 6 day rotating schedule
-# This creates a rotating calendar for student contact days only. 
+# The program accounts for vacations, weekends, and wacky wednesdays, which does not count as a 6 day rotating day.
+# This creates a rotating calendar for student ocntact days only! 
 # I used this calendar as authoritative reference: https://resources.finalsite.net/images/v1539954537/warsaw/kmdb4gksa4mu7rjfwhcj/Calendar2019-2020Final.pdf
-#
-# This code works, but this particular version generates a plaintext used to verify / double check if the 
-# no contact days are correct. 
-#
-# To export to file, just  $python3 elementary_rotating_calendar.py > myfile.txt
 #
 # Questions, comments to Bill MacKenty bmackenty@gmail.com
 # github repo: https://github.com/bmackenty/rotationMaker.py
@@ -30,9 +25,13 @@ academicYearMeetingDays = endOfAcademicYear - startOfAcademicYear
 
 print("There are", academicYearMeetingDays.days, "total calendar days, including weekends and vacations. ")
 
-# Initialize vacations and staff PD days.  Please triple-check this!!!! 
+# Initialize vacations and staff PD days.  Please triple-check this!!!!
+# These days are are only for the lower-school (sept 26,27 and april 3 are all specific 
+# to the lower school 
 
 noStudentContactDays = [
+    "2019-09-26",
+    "2019-09-27",
     "2019-10-04",
     "2019-10-28",
     "2019-10-29",
@@ -64,6 +63,7 @@ noStudentContactDays = [
     "2020-02-27",
     "2020-02-28",
     "2020-03-02",
+    "2020-04-03",
     "2020-04-10",
     "2020-04-13",
     "2020-04-27",
@@ -73,7 +73,6 @@ noStudentContactDays = [
     "2020-05-01",
     "2020-06-11"
     ]
-
 
 # meeting days work like this: 
 
@@ -98,9 +97,7 @@ def dayOfWeek(integerWeekday):
 
 # I'm keeping track of some processing data here for sanity: 
 
-startingMeetingDay = 1
 totalDays = 0
-totalDaysNoWeekends = 0 
 meetingDay = 0
 
 
@@ -122,7 +119,7 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
                 if meetingDay == 6:
                     meetingDay = 0
                 meetingDay += 1
-                print(dayOfWeek(dt.weekday()), ",", dt.strftime("%m-%d-%Y") , "Rotating day: ", meetingDay)
+                print(dayOfWeek(dt.weekday()),",",dt.strftime("%m-%d-%Y"),",",meetingDay)
 
 
 print("Total student contact days (counting Wednesdays): ", totalDays)
