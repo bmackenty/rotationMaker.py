@@ -1,8 +1,13 @@
 #
 # This program is designed to make a 6 day rotating calendar for the American School of Warsaw. 
-# The program accounts for vacations, weekends, and wacky wednesdays, which does not count as a 6 day rotating day.
-# This creates a rotating calendar for student ocntact days only! 
+# The program accounts for vacations, weekends, and wacky wednesdays, which do not count in the 6 day rotating schedule
+# This creates a rotating calendar for student contact days only. 
 # I used this calendar as authoritative reference: https://resources.finalsite.net/images/v1539954537/warsaw/kmdb4gksa4mu7rjfwhcj/Calendar2019-2020Final.pdf
+#
+# This code works, but this particular version generates a plaintext used to verify / double check if the 
+# no contact days are correct. 
+#
+# To export to file, just  $python3 elementary_rotating_calendar.py > myfile.txt
 #
 # Questions, comments to Bill MacKenty bmackenty@gmail.com
 # github repo: https://github.com/bmackenty/rotationMaker.py
