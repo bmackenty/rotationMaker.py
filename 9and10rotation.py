@@ -1,7 +1,21 @@
 #
-# This program is designed to make a rotating calendar for the American School of Warsaw. 
-# 
+# This program is designed to make a  rotating calendar for the American School of Warsaw. 
+# The program accounts for vacations, weekends and wednesdays, which have a different meeting time.
+# This creates a rotating calendar for student contact days only. This creates output designed to be imported into a google calendar.
+#
+# A command line scenario might be $11_12rotation.py > 11_12_rotaion.txt
+# The txt file would then be imported into google calendar. 
+#
+# I used this calendar as authoritative reference: 
+# https://resources.finalsite.net/images/v1539954537/warsaw/kmdb4gksa4mu7rjfwhcj/Calendar2019-2020Final.pdf
+#
+# Questions, comments to Bill MacKenty bmackenty@gmail.com
+# github repo: https://github.com/bmackenty/rotationMaker.py
+
+# import various libraries:
+
 import datetime
+import os
 from dateutil.rrule import rrule, DAILY
 
 # initialization stuff for 9th and 10th grade! 
@@ -18,8 +32,8 @@ grade9and10normalPeriod3End = datetime.time(12,30)
 grade9and10normalPeriod4Start = datetime.time(14,20)
 grade9and10normalPeriod4End = datetime.time(15,30)
 
-grade9and10normalPeriodADVStart = datetime.time(13)
-grade9and10normalPeriodADVEnd = datetime.time(13,20)
+grade9and10normalPeriodADVStart = datetime.time(13,5)
+grade9and10normalPeriodADVEnd = datetime.time(14,15)
 
 grade9and10normalPeriod9Start = datetime.time(13,5)
 grade9and10normalPeriod9End = datetime.time(14,15)
@@ -41,21 +55,58 @@ grade9and10WednesdayPeriod4End = datetime.time(15,30)
 
 
 
-# Initialize vacations 
+# Initialize vacations and staff PD days.  Please triple-check this!!!!
 
-vacations = ["2018-09-06","2018-09-07","2018-10-05","2018-10-17","2018-10-29","2018-10-30","2018-10-31","2018-11-01","2018-11-02",
-"2018-11-22","2018-11-23",
-"2018-12-17","2018-12-18","2018-12-19","2018-12-20","2018-12-21","2018-12-24","2018-12-25","2018-12-26","2018-12-27","2018-12-28","2018-12-31","2019-01-01","2019-01-02","2019-01-03","2019-01-04",
-"2019-02-12","2019-02-18","2019-02-19","2019-02-20","2019-02-21","2019-02-22",
-"2019-03-15","2019-04-19","2019-04-22","2019-04-29","2019-04-30","2019-05-01","2019-05-02","2019-05-03",
-"2019-06-19"]
+noStudentContactDays = [
+	"2019-10-04",
+	"2019-10-15",
+    "2019-10-28",
+    "2019-10-29",
+    "2019-10-30",
+    "2019-10-31",
+    "2019-11-01",
+    "2019-11-11",
+    "2019-11-28",
+    "2019-11-29",
+    "2019-12-16",
+    "2019-12-17",
+    "2019-12-18",
+    "2019-12-19",
+    "2019-12-20",
+    "2019-12-23",
+    "2019-12-24",
+    "2019-12-25",
+    "2019-12-26",
+    "2019-12-27",
+    "2019-12-30",
+    "2019-12-31",
+    "2020-01-01",
+    "2020-01-02",
+    "2020-01-03",
+    "2020-01-06",
+    "2020-02-24",
+    "2020-02-25",
+    "2020-02-26",
+    "2020-02-27",
+    "2020-02-28",
+	"2020-03-02",
+	"2020-04-07",
+    "2020-04-10",
+    "2020-04-13",
+    "2020-04-27",
+    "2020-04-28",
+    "2020-04-29",
+    "2020-04-30",
+    "2020-05-01",
+    "2020-06-11"
+    ]
 
 
 
 # initialization for start of year
 
-startOfAcademicYear = datetime.date(2018,8,24) # Friday
-endOfAcademicYear = datetime.date(2019,6,18) # Wednesday
+startOfAcademicYear = datetime.date(2019,8,23) # Friday
+endOfAcademicYear = datetime.date(2020,6,18) # Thursday
 academicYearMeetingDays = endOfAcademicYear - startOfAcademicYear
 
 # functions to do stuff
@@ -108,7 +159,7 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 		# the condition below skips weekends
 		# TODO add 9/10/11/12 split 
 		if dt.weekday() < 5:
-			if dt.strftime('%Y-%m-%d') not in vacations:
+			if dt.strftime('%Y-%m-%d') not in noStudentContactDays:
 				# the condition below limits us to 4 rotating days
 				if meetingDayNumber > 4:
 					meetingDayNumber = 1
@@ -192,5 +243,5 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 
 
 
-print("I've processed a total of ", totalDays, " days")
-print("I've processed a total of ", totalDaysNoWeekends, " days with no weekends")
+# print("I've processed a total of ", totalDays, " days")
+# print("I've processed a total of ", totalDaysNoWeekends, " days with no weekends")
