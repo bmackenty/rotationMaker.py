@@ -64,7 +64,8 @@ academicYearMeetingDays = endOfAcademicYear - startOfAcademicYear
 # Initialize vacations and staff PD days.  Please triple-check this!!!!
 
 noStudentContactDays = [
-    "2019-10-04",
+	"2019-10-04",
+	"2019-10-15",
     "2019-10-28",
     "2019-10-29",
     "2019-10-30",
@@ -94,7 +95,8 @@ noStudentContactDays = [
     "2020-02-26",
     "2020-02-27",
     "2020-02-28",
-    "2020-03-02",
+	"2020-03-02",
+	"2020-04-07",
     "2020-04-10",
     "2020-04-13",
     "2020-04-27",
