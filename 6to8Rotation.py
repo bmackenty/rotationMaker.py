@@ -57,6 +57,8 @@ grade6to8WednesdayPeriod4End = datetime.time(15,30)
 # Initialize no contact days: 
 
 noStudentContactDays = [
+	"2019-09-05",
+	"2019-09-06",
 	"2019-10-04",
 	"2019-10-15",
     "2019-10-28",
