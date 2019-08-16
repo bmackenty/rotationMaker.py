@@ -58,6 +58,8 @@ grade9and10WednesdayPeriod4End = datetime.time(15,30)
 # Initialize vacations and staff PD days.  Please triple-check this!!!!
 
 noStudentContactDays = [
+	"2019-09-05",
+	"2019-09-06",
 	"2019-10-04",
 	"2019-10-15",
     "2019-10-28",
