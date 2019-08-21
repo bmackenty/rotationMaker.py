@@ -163,9 +163,9 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
                     print("Language," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
                     print("Snack / CBT," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
                     print("Recess / Lunch," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5End)
-                    print("Quiet Reading" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
-                    print("Recess" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
-                    print("End of Day / Dismissal" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
+                    print("Quiet Reading," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
+                    print("Recess," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
+                    print("End of Day / Dismissal," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
 
                 elif meetingDay == 2:
                     # print("this is the day 1 schedule")
@@ -173,9 +173,9 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
                     print("Language," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
                     print("PE," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
                     print("Recess / Lunch," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5End)
-                    print("Quiet Reading" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
-                    print("Recess" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
-                    print("End of Day / Dismissal" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
+                    print("Quiet Reading," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
+                    print("Recess," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
+                    print("End of Day / Dismissal," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
 
                 elif meetingDay == 3:
                     # print("this is the day 1 schedule")
@@ -183,9 +183,9 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
                     print("Art," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
                     print("Art," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
                     print("Recess / Lunch," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5End)
-                    print("Quiet Reading" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
-                    print("Recess" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
-                    print("End of Day / Dismissal" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
+                    print("Quiet Reading," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
+                    print("Recess," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
+                    print("End of Day / Dismissal," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
 
                 elif meetingDay == 4:
                     # print("this is the day 1 schedule")
@@ -194,9 +194,9 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
                     print("Language," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
                     print("Snack / CBT," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
                     print("Recess / Lunch," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5End)
-                    print("Quiet Reading" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
-                    print("Recess" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
-                    print("End of Day / Dismissal" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
+                    print("Quiet Reading," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
+                    print("Recess," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
+                    print("End of Day / Dismissal," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
                     
                 elif meetingDay == 5:
                     # print("this is the day 1 schedule")
@@ -204,9 +204,9 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
                     print("Language," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
                     print("PE," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
                     print("Recess / Lunch," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5End)
-                    print("Quiet Reading" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
-                    print("Recess" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
-                    print("End of Day / Dismissal" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
+                    print("Quiet Reading," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
+                    print("Recess," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
+                    print("End of Day / Dismissal," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
 
                 elif meetingDay == 6:
                     # print("this is the day 1 schedule")
@@ -214,9 +214,9 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
                     print("Music," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
                     print("PE," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
                     print("Recess / Lunch," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5End)
-                    print("Quiet Reading" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
-                    print("Recess" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
-                    print("End of Day / Dismissal" ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
+                    print("Quiet Reading," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
+                    print("Recess," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
+                    print("End of Day / Dismissal," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
 
 
 
@@ -230,10 +230,4 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
                 elif meetingDay == 5:
                     print("This is day 5 schedule")  
                 elif meetingDay == 6:
-                    print("This is day 6 schedule")      
-
-
-            
-                
-
-
+                    print("This is day 6 schedule")     
