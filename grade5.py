@@ -15,9 +15,8 @@ from dateutil.rrule import rrule, DAILY
 
 # this just clears the screen for my own sanity:
 
-os.system('clear')
+# os.system('clear')
 
-# initialization for start of year
 
 #initialization stuff here: 
 
@@ -34,10 +33,10 @@ grade5normalPeriod4Start = datetime.time(10,20)
 grade5normalPeriod4End = datetime.time(11,00) 
 
 grade5normalPeriod5Start = datetime.time(11,5) 
-grade5normalPeriod5End = datetime.time(11,45) 
+grade5normalPeriod5End = datetime.time(12,30) 
 
-grade5normalPeriod6Start = datetime.time(11,50) 
-grade5normalPeriod6End = datetime.time(12,25) 
+grade5normalPeriod6Start = datetime.time(12,30) 
+grade5normalPeriod6End = datetime.time(13,00) 
 
 grade5normalPeriod7Start = datetime.time(12,30) 
 grade5normalPeriod7End = datetime.time(13,00) 
@@ -58,8 +57,6 @@ grade5normalPeriod11End = datetime.time(15,30)
 startOfAcademicYear = datetime.date(2019,8,20) # Tuesday
 endOfAcademicYear = datetime.date(2020,6,18) # Thursday
 academicYearMeetingDays = endOfAcademicYear - startOfAcademicYear
-
-print("There are", academicYearMeetingDays.days, "total calendar days, including weekends and vacations. ")
 
 # Initialize vacations and staff PD days.  Please triple-check this!!!!
 # These days are are only for the lower-school (sept 26,27 and april 3 are all specific 
@@ -136,7 +133,9 @@ def dayOfWeek(integerWeekday):
 totalDays = 0
 meetingDay = 0
 # 
-
+# These are the headers needed to import the file into google calendar
+#
+print("Subject,Start Date,Start Time,End Date,End Time")
 #
 # the loop below was used from stackoverflow because I wasn't thinking of the date utilities in python.
 # https://stackoverflow.com/questions/1060279/iterating-through-a-range-of-dates-in-python
