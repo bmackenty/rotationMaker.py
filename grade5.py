@@ -20,6 +20,19 @@ from dateutil.rrule import rrule, DAILY
 
 #initialization stuff here: 
 
+grade5normalDuty1Start = datetime.time(11,50) 
+grade5normalDuty1End = datetime.time(12,10) 
+
+grade5normalDuty2Start = datetime.time(14,45) 
+grade5normalDuty2End = datetime.time(15,15) 
+
+grade5normalDuty3Start = datetime.time(11,50) 
+grade5normalDuty3End = datetime.time(12,10) 
+
+
+
+
+
 grade5normalPeriod1Start = datetime.time(8,30) 
 grade5normalPeriod1End = datetime.time(8,45) 
 
@@ -45,7 +58,7 @@ grade5normalPeriod8Start = datetime.time(13,00)
 grade5normalPeriod8End = datetime.time(13,50) 
 
 grade5normalPeriod9Start = datetime.time(14,00) 
-grade5normalPeriod9End = datetime.time(14,45) 
+grade5normalPeriod9End = datetime.time(14,40) 
 
 grade5normalPeriod10Start = datetime.time(14,45) 
 grade5normalPeriod10End = datetime.time(15,15) 
@@ -128,7 +141,7 @@ def dayOfWeek(integerWeekday):
 		return "ERROR"			
 
 
-# I'm keeping track of some processing data here for sanity: 
+# for our iterations
 
 totalDays = 0
 meetingDay = 0
@@ -140,6 +153,7 @@ print("Subject,Start Date,Start Time,End Date,End Time")
 # the loop below was used from stackoverflow because I wasn't thinking of the date utilities in python.
 # https://stackoverflow.com/questions/1060279/iterating-through-a-range-of-dates-in-python
 #
+
 
 for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
     # the condition below skips weekends:
@@ -157,76 +171,39 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
                 # print(dayOfWeek(dt.weekday()),",",dt.strftime("%m-%d-%Y"),",",meetingDay)
                 if meetingDay == 1:
                     # print("this is the day 1 schedule")
-                    print("Attendance," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod1End)
-                    print("Music," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod2End)
-                    print("Language," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
-                    print("Snack / CBT," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
-                    print("Recess / Lunch," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5End)
-                    print("Quiet Reading," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
-                    print("Recess," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
-                    print("End of Day / Dismissal," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
+                    print("Student: Music T: Inclusion," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod2End)
+                    print("Student: Language T: Ind.," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
+                    print("Duty," ,dt.strftime("%m-%d-%Y"),",",grade5normalDuty1Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalDuty1End)
 
                 elif meetingDay == 2:
                     # print("this is the day 1 schedule")
-                    print("CBT," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod1End)
-                    print("Language," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
-                    print("PE," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
-                    print("Recess / Lunch," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5End)
-                    print("Quiet Reading," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
-                    print("Recess," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
-                    print("End of Day / Dismissal," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
+                    print("Student: Language T: Ind.," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
+                    print("Student: PE T: RSPP," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
 
                 elif meetingDay == 3:
                     # print("this is the day 1 schedule")
-                    print("CBT," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod1End)
-                    print("Art," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
-                    print("Art," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
-                    print("Recess / Lunch," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5End)
-                    print("Quiet Reading," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
-                    print("Recess," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
-                    print("End of Day / Dismissal," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
+                    print("Student: Art T: PYP," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
+                    print("Student: Art T: PYP," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
+                    print("Duty," ,dt.strftime("%m-%d-%Y"),",",grade5normalDuty2Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalDuty2End)
 
                 elif meetingDay == 4:
                     # print("this is the day 1 schedule")
-                    print("Attendance," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod1End)
-                    print("Music," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod2End)
-                    print("Language," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
-                    print("Snack / CBT," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
-                    print("Recess / Lunch," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5End)
-                    print("Quiet Reading," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
-                    print("Recess," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
-                    print("End of Day / Dismissal," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
-                    
+                    print("Student: Music T: Ind.," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod2End)
+                    print("Student: Language T:UOI," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
+
                 elif meetingDay == 5:
                     # print("this is the day 1 schedule")
-                    print("CBT," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod1End)
-                    print("Language," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
-                    print("PE," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
-                    print("Recess / Lunch," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5End)
-                    print("Quiet Reading," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
-                    print("Recess," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
-                    print("End of Day / Dismissal," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
+                    print("Student: Language T: Ind.," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
+                    print("Student: PE T: Literacy," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
+                    print("Duty," ,dt.strftime("%m-%d-%Y"),",",grade5normalDuty3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalDuty3End)
 
                 elif meetingDay == 6:
                     # print("this is the day 1 schedule")
-                    print("CBT," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod1End)
-                    print("Music," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
-                    print("PE," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
-                    print("Recess / Lunch," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod5End)
-                    print("Quiet Reading," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod6End)
-                    print("Recess," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod10End)
-                    print("End of Day / Dismissal," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod11End)
+                    print("Student: Music T:Ind.," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod3End)
+                    print("Student: PE T:Math Planning," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod4End)
+            else:
+                # This must be a wednesday:
+                print("Student: PCL T: Ind.," ,dt.strftime("%m-%d-%Y"),",",grade5normalPeriod9Start,",",dt.strftime("%m-%d-%Y"),",",grade5normalPeriod9End)
 
 
-
-
-                elif meetingDay == 2:
-                    print("This is day 2 schedule")    
-                elif meetingDay == 3:
-                    print("This is day 3 schedule")        
-                elif meetingDay == 4:
-                    print("This is day 4 schedule")        
-                elif meetingDay == 5:
-                    print("This is day 5 schedule")  
-                elif meetingDay == 6:
-                    print("This is day 6 schedule")     
+   
