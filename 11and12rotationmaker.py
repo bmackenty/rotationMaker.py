@@ -7,8 +7,8 @@
 # The txt file would then be imported into google calendar. 
 #
 # I used this calendar as authoritative reference: 
-# https://resources.finalsite.net/images/v1539954537/warsaw/kmdb4gksa4mu7rjfwhcj/Calendar2019-2020Final.pdf
-#
+# https://resources.finalsite.net/images/v1661339384/warsaw/yhzbmoaew1xei49zenyo/ASWCalendar22-23.pdf
+
 # Questions, comments to Bill MacKenty bmackenty@gmail.com
 # github repo: https://github.com/bmackenty/rotationMaker.py
 
@@ -22,20 +22,20 @@ from dateutil.rrule import rrule, DAILY
 # initialize the grade 11 and 12 
 
 
-grade11and12normalPeriod1Start = datetime.time(8,20)
-grade11and12normalPeriod1End = datetime.time(9,40)
+grade11and12normalPeriod1Start = datetime.time(8,15)
+grade11and12normalPeriod1End = datetime.time(9,45)
 
-grade11and12normalPeriod2Start = datetime.time(10,00)
+grade11and12normalPeriod2Start = datetime.time(9,50)
 grade11and12normalPeriod2End = datetime.time(11,20)
 
-grade11and12normalPeriod3Start = datetime.time(11,30)
-grade11and12normalPeriod3End = datetime.time(12,50)
+grade11and12normalPeriod3Start = datetime.time(12,50)
+grade11and12normalPeriod3End = datetime.time(14,5)
 
-grade11and12normalPeriodADVStart = datetime.time(12,55)
-grade11and12normalPeriodADVEnd = datetime.time(13,15)
+grade11and12normalPeriodADVStart = datetime.time(11,25)
+grade11and12normalPeriodADVEnd = datetime.time(12,5)
 
-grade11and12normalPeriod4Start = datetime.time(14,00)
-grade11and12normalPeriod4End = datetime.time(15,20)
+grade11and12normalPeriod4Start = datetime.time(14,10)
+grade11and12normalPeriod4End = datetime.time(15,40)
 
 # the configuration below is for Wednesdays
 
@@ -45,18 +45,18 @@ grade11and12WednesdayPeriod1End = datetime.time(10,50)
 grade11and12WednesdayPeriod2Start = datetime.time(11,00)
 grade11and12WednesdayPeriod2End = datetime.time(12,20)
 
-grade11and12WednesdayPeriod3Start = datetime.time(12,50)
-grade11and12WednesdayPeriod3End = datetime.time(14,10)
+grade11and12WednesdayPeriod3Start = datetime.time(12,30)
+grade11and12WednesdayPeriod3End = datetime.time(13,50)
 
-grade11and12WednesdayPeriod4Start = datetime.time(14,15)
-grade11and12WednesdayPeriod4End = datetime.time(15,30)
+grade11and12WednesdayPeriod4Start = datetime.time(14,20)
+grade11and12WednesdayPeriod4End = datetime.time(15,40)
 
 
 
 # initialization for start of year
 
-startOfAcademicYear = datetime.date(2019,8,23) # Friday
-endOfAcademicYear = datetime.date(2020,6,18) # Thursday
+startOfAcademicYear = datetime.date(2022,8,17) # Wednesday
+endOfAcademicYear = datetime.date(2023,6,15) # Thursday
 academicYearMeetingDays = endOfAcademicYear - startOfAcademicYear
 
 # print("There are", academicYearMeetingDays.days, "total calendar days, including weekends and vacations. ")
@@ -64,49 +64,46 @@ academicYearMeetingDays = endOfAcademicYear - startOfAcademicYear
 # Initialize vacations and staff PD days.  Please triple-check this!!!!
 
 noStudentContactDays = [
-	"2019-09-05",
-	"2019-09-06",
-	"2019-10-04",
-	"2019-10-15",
-    "2019-10-28",
-    "2019-10-29",
-    "2019-10-30",
-    "2019-10-31",
-    "2019-11-01",
-    "2019-11-11",
-    "2019-11-28",
-    "2019-11-29",
-    "2019-12-16",
-    "2019-12-17",
-    "2019-12-18",
-    "2019-12-19",
-    "2019-12-20",
-    "2019-12-23",
-    "2019-12-24",
-    "2019-12-25",
-    "2019-12-26",
-    "2019-12-27",
-    "2019-12-30",
-    "2019-12-31",
-    "2020-01-01",
-    "2020-01-02",
-    "2020-01-03",
-    "2020-01-06",
-    "2020-02-24",
-    "2020-02-25",
-    "2020-02-26",
-    "2020-02-27",
-    "2020-02-28",
-	"2020-03-02",
-	"2020-04-07",
-    "2020-04-10",
-    "2020-04-13",
-    "2020-04-27",
-    "2020-04-28",
-    "2020-04-29",
-    "2020-04-30",
-    "2020-05-01",
-    "2020-06-11"
+	"2022-09-30",
+	"2022-10-24",
+	"2022-10-25",
+    "2022-10-26",
+    "2022-10-27",
+    "2022-10-28",
+    "2022-10-31",
+    "2022-11-01",
+    "2022-11-11",
+    "2022-11-24",
+    "2022-11-25", 
+    "2022-12-19",
+    "2022-12-20",
+    "2022-12-21",
+    "2022-12-22",
+    "2022-12-23",
+    "2022-12-26",
+    "2022-12-27",
+    "2022-12-28",
+    "2022-12-29",
+    "2022-12-30",
+    "2023-01-02",
+    "2023-01-03",
+    "2023-01-04",
+    "2023-01-05",
+	"2023-01-06",
+    "2023-02-20",
+    "2023-02-21",
+    "2023-02-22",
+    "2023-02-23",
+    "2023-02-24",
+	"2023-03-31",
+	"2023-04-10",
+    "2023-05-01",
+	"2023-05-01",
+	"2023-05-02",
+	"2023-05-03",
+	"2023-05-04",
+	"2023-05-05",
+    "2023-06-08"
     ]
 # function to translate interger weekday to human-readable date
 
@@ -141,11 +138,12 @@ def meetingDay(meetingDayNumber):
 		return "ERROR"
 #
 # the function below was used from stackoverflow because I wasn't thinking of the date utilities in python.
+# Which is kind of silly if you think about it. 
 # https://stackoverflow.com/questions/1060279/iterating-through-a-range-of-dates-in-python
 #
 
 # I'm keeping track of some processing data here for sanity 
-#
+
 
 totalDays = 0
 totalDaysNoWeekends = 0 
@@ -164,61 +162,61 @@ for dt in rrule(DAILY, dtstart=startOfAcademicYear, until=endOfAcademicYear):
 				if meetingDayNumber == 1:
 					if dt.weekday() == 2:
 						# print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 1,2,3,4")
-						print("Period 1," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1End)
-						print("Period 2," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2End)
-						print("Period 3," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3End)
-						print("Period 4," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4End)
+						print("Blk 1 - DSTP," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1End)
+						print("Blk 2 - Planning," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2End)
+						print("Blk 3 - Planning," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3End)
+						print("Blk 4 - Yr 1 CompSci," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4End)
 					else:
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 1,2,3,4")
-						print("Period 1," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1End)
-						print("Period 2," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
-						print("Period 3," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
-						print("Period 4," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
+						print("Blk 1 - DSTP," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1End)
+						print("Blk 2 - Planning," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
+						print("Blk 3 - Planning," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
+						print("Blk 4 - Yr 1 CompSci," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
 						print("Adv/Comm," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVStart,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVEnd)
 
 				elif meetingDayNumber == 2:
 					if dt.weekday() == 2:
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 5,6,7,8")
-						print("Period 5," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1End)
-						print("Period 6," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2End)
-						print("Period 7," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3End)
-						print("Period 8," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4End)
+						print("Blk 5 - SCPTP," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1End)
+						print("Blk 6 - DSTP," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2End)
+						print("Blk 7 - Planning," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3End)
+						print("Blk 8 - Yr 2 CompSci," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4End)
 					else:	
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 5,6,7,8")
-						print("Period 5," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1End)
-						print("Period 6," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
-						print("Period 7," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
-						print("Period 8," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
+						print("Blk 5 - SCPTP," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1End)
+						print("Blk 6 - DSTP," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
+						print("Blk 7 - Planning," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
+						print("Blk 8 - Yr 2 CompSci," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
 						print("Adv/Comm," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVStart,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVEnd)
 
 				elif meetingDayNumber == 3:
 					if dt.weekday() == 2:	
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 4,2,3,1")
-						print("Period 4," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1End)
-						print("Period 2," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2End)
-						print("Period 3," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3End)
-						print("Period 1," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4End)
+						print("Blk 4 - Yr 1 CompSci," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1End)
+						print("Blk 2 - Planning," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2End)
+						print("Blk 3 - Planning," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3End)
+						print("Blk 1 - DSTP," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4End)
 					else:
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 4,2,3,1")
-						print("Period 4," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1End)
-						print("Period 2," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
-						print("Period 3," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
-						print("Period 1," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
+						print("Blk 4 - Yr 1 CompSci," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1End)
+						print("Blk 2 - Planning," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
+						print("Blk 3 - Planning," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
+						print("Blk 1 - DSTP," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
 						print("Adv/Comm," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVStart,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVEnd)
 
 				elif meetingDayNumber == 4:
 					if dt.weekday() == 2:
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 8,6,7,5")
-						print("Period 8," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1End)
-						print("Period 6," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2End)
-						print("Period 7," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3End)
-						print("Period 5," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4End)
+						print("Blk 8 - Yr 2 CompSci," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod1End)
+						print("Blk 6 - DSTP," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod2End)
+						print("Blk 7 - Planning," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod3End)
+						print("Blk 5 - SCPTP," ,dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12WednesdayPeriod4End)
 					else:
 						#print(dt.strftime("%Y-%m-%d"), " is a ", dayOfWeek(dt.weekday()), " which is a day", meetingDay(meetingDayNumber), " which is periods 8,6,7,5")
-						print("Period 8," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1End)
-						print("Period 6," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
-						print("Period 7," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
-						print("Period 5," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
+						print("Blk 8 - Yr 2 CompSci," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod1End)
+						print("Blk 6 - DSTP," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod2End)
+						print("Blk 7 - Planning," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod3End)
+						print("Blk 5 - SCPTP," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4Start,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriod4End)
 						print("Adv/Comm," ,dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVStart,",",dt.strftime("%m-%d-%Y"),",",grade11and12normalPeriodADVEnd)
 				meetingDayNumber += 1
 				totalDaysNoWeekends +=1
