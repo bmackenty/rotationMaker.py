@@ -1,7 +1,8 @@
 #
 # This program is designed to make a  rotating calendar for the American School of Warsaw. 
 # The program accounts for vacations, weekends and wednesdays, which have a different meeting time.
-# This creates a rotating calendar for student contact days only. This creates output designed to be imported into a google calendar.
+# This creates a rotating calendar for student contact days only. 
+# This creates output designed to be imported into a google calendar.
 #
 # A command line scenario might be $11_12rotation.py > 11_12_rotaion.txt
 # The txt file would then be imported into google calendar. 
@@ -55,8 +56,9 @@ grade11and12WednesdayPeriod4End = datetime.time(15,40)
 
 # initialization for start of year
 
-startOfAcademicYear = datetime.date(2022,8,17) # Wednesday
-endOfAcademicYear = datetime.date(2023,6,15) # Thursday
+startOfAcademicYear = datetime.date(2022,8,18) # Wednesday 
+# THIS SHOULD BE THE FIRST MEETING DAY, not the first day of school with a special schedule
+endOfAcademicYear = datetime.date(2023,6,15)
 academicYearMeetingDays = endOfAcademicYear - startOfAcademicYear
 
 # print("There are", academicYearMeetingDays.days, "total calendar days, including weekends and vacations. ")
@@ -65,6 +67,8 @@ academicYearMeetingDays = endOfAcademicYear - startOfAcademicYear
 
 noStudentContactDays = [
 	"2022-09-30",
+	"2022-10-13",
+	"2022-10-14",
 	"2022-10-24",
 	"2022-10-25",
     "2022-10-26",
@@ -96,6 +100,8 @@ noStudentContactDays = [
     "2023-02-23",
     "2023-02-24",
 	"2023-03-31",
+	"2023-04-06",
+	"2023-04-07",
 	"2023-04-10",
     "2023-05-01",
 	"2023-05-01",
